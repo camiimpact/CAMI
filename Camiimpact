@@ -1,0 +1,78 @@
+HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CAMI Fight Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    h1 {
+      background: #c00;
+      padding: 15px;
+      margin: 0;
+    }
+
+    .ring {
+      background: url('https://i.imgur.com/8QfQZ6G.jpg') no-repeat center;
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .fighter {
+      width: 100px;
+    }
+
+    button {
+      padding: 15px;
+      margin: 10px;
+      font-size: 18px;
+      background: #c00;
+      color: white;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🥊 Academia CAMI Fight</h1>
+
+<div class="ring">
+  <img class="fighter" src="https://i.imgur.com/Z6X6Q9F.png">
+  <img class="fighter" src="https://i.imgur.com/1XK9Z9L.png">
+</div>
+
+<h2>Moedas: <span id="coins">0</span></h2>
+
+<button onclick="ganharMoedas()">💰 Treinar (ganhar moedas)</button>
+<button onclick="lutar()">🥊 Lutar</button>
+
+<script>
+let coins = 0;
+
+function ganharMoedas() {
+  coins += 10;
+  document.getElementById("coins").innerText = coins;
+}
+
+function lutar() {
+  let ganho = Math.floor(Math.random() * 50);
+  coins += ganho;
+  alert("Você lutou e ganhou " + ganho + " moedas!");
+  document.getElementById("coins").innerText = coins;
+}
+</script>
+
+</body>
+</html>
